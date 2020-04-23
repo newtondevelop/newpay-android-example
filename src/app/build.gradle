@@ -1,0 +1,240 @@
+import java.text.SimpleDateFormat
+
+def buildTime() {
+    def df = new SimpleDateFormat("yyyyMMddHHmm")
+    df.setTimeZone(TimeZone.getDefault())
+    return df.format(new Date())
+}
+
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+apply plugin: 'io.fabric'
+apply plugin: 'walle'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+
+project.ext {
+    retrofitVersion = "2.3.0"
+    okhttpVersion = "3.9.0"
+    supportVersion = "27.1.1"
+    web3jVersion = "3.3.1-android"
+    gethVersion = "1.7.0"
+    gsonVersion = "2.8.2"
+    rxJavaVersion = "2.1.6"
+    rxAndroidVersion = "2.0.1"
+    daggerVersion = "2.11"
+    bitcoinjVersion = "0.14.7"
+    butterknifeVersion = "8.8.1"
+    spongycastleVersion = '1.54.0.0'
+    slf4jVersion = '1.7.25'
+    eventBusVersion = '3.1.1'
+    picassoVersion = '2.71828'
+}
+
+android {
+    signingConfigs {
+        release {
+            keyAlias 'newpay-android'
+            keyPassword '#password#'
+            storeFile file('android-key/newpay-android.keystore')
+            storePassword '#password#'
+        }
+    }
+
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "org.newtonproject.newtoncore.android"
+        minSdkVersion 21
+        targetSdkVersion 28
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled = true
+        signingConfig signingConfigs.release
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            zipAlignEnabled true
+            shrinkResources true
+        }
+        debug {
+            manifestPlaceholders = [
+                    CHANNEL         : "channel-debug",
+                    APP_ENV         : "dev",
+            ]
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    packagingOptions {
+        exclude 'META-INF/NOTICE' // will not include NOTICE file
+        exclude 'META-INF/LICENSE' // will not include LICENSE file
+        // as noted by @Vishnuvathsan you may also need to include
+        // variations on the file name. It depends on your dependencies.
+        // Some other common variations on notice and license file names
+        //exclude 'META-INF/notice'
+        //exclude 'META-INF/notice.txt'
+        //exclude 'META-INF/license'
+        //exclude 'META-INF/license.txt'
+    }
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    flavorDimensions "normal"
+    productFlavors {
+        Dev {
+            dimension "normal"
+            buildConfigField 'String', 'AUTHORITY', '"org.newtonproject.newtoncore.android.dev"'
+            applicationIdSuffix ".dev"
+            manifestPlaceholders = [
+                    app_name        : "NewtonCore",
+                    authorize_pay   : "org.newtonproject.newtoncore.android.dev.pay",
+                    authorize_login_place: "org.newtonproject.newtoncore.android.dev.authorize",
+                    authorize_login_place_v2: "org.newtonproject.newtoncore.android.dev.authorize_v2",
+                    CHANNEL         : "channel-dev",
+                    APP_ENV         : "dev",
+            ]
+        }
+    }
+}
+
+android.applicationVariants.all { variant ->
+    variant.outputs.all {
+        outputFileName = "newton-core-${variant.versionName}-${variant.versionCode}-${variant.name}-${buildTime()}.apk"
+    }
+}
+
+
+dependencies {
+
+    // Http client
+    implementation "com.squareup.retrofit2:retrofit:$project.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$project.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$project.retrofitVersion"
+    implementation "com.squareup.okhttp3:okhttp:$project.okhttpVersion"
+    implementation "com.google.code.gson:gson:$project.gsonVersion"
+    implementation 'android.arch.lifecycle:runtime:1.1.1'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation "com.android.support:appcompat-v7:$project.supportVersion"
+    implementation "com.android.support:design:$project.supportVersion"
+    implementation "com.android.support:recyclerview-v7:$project.supportVersion"
+    implementation 'com.android.support:multidex:1.0.2'
+    implementation 'com.google.android.gms:play-services-safetynet:16.0.0'
+
+    // Bar code scanning
+    implementation 'com.google.zxing:core:3.3.0'
+    implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
+
+    // Sugar
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.github.apl-devs:appintro:v4.2.2'
+    implementation 'com.romandanylyk:pageindicatorview:1.0.0'
+
+    // ReactiveX
+    implementation "io.reactivex.rxjava2:rxjava:$project.rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$project.rxAndroidVersion"
+
+    // eventbus
+    implementation "org.greenrobot:eventbus:$project.eventBusVersion"
+
+    // Picasso
+    implementation "com.squareup.picasso:picasso:$project.picassoVersion"
+
+    // Dagger core
+    implementation "com.google.dagger:dagger:$project.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$project.daggerVersion"
+
+    // Dagger Android
+    implementation "com.google.dagger:dagger-android-support:$project.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$project.daggerVersion"
+
+    // if you are not using support library, include this instead
+    implementation "com.google.dagger:dagger-android:$project.daggerVersion"
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
+
+    // Tests
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation("com.android.support.test.espresso:espresso-core:2.2.2", {
+        exclude group: "com.android.support", module: "support-annotations"
+    })
+    androidTestImplementation('tools.fastlane:screengrab:1.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'com.lambdaworks:scrypt:1.4.0'
+
+    // socket io
+    implementation('io.socket:socket.io-client:1.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+
+    //butterknife
+    implementation "com.jakewharton:butterknife:$project.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$project.butterknifeVersion"
+    implementation "com.madgag.spongycastle:prov:$project.spongycastleVersion"
+    implementation 'com.github.weixuefeng:TrustSdk-android:0.01.14'
+    implementation "com.android.support:cardview-v7:$project.supportVersion"
+
+    //screen adapter
+    implementation 'me.jessyan:autosize:1.0.0'
+
+    // PW
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':core')
+    implementation files('libs/crypto-3.3.1-android.jar')
+    implementation files('libs/abi-3.3.1-android.jar')
+    implementation files('libs/core-3.3.1-android.jar')
+    implementation files('libs/rxjava-1.2.4.jar')
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') {
+        transitive = true
+    }
+    implementation('com.crashlytics.sdk.android:answers:1.4.3@aar') {
+        transitive = true
+    }
+    implementation files('libs/pinyin4j-2.5.0.jar')
+    implementation files('libs/moji4j-1.2.0.jar')
+
+    // font
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+    // permission
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+
+    // walle
+    implementation 'com.meituan.android.walle:library:1.1.6'
+
+    // rx cache
+    implementation 'com.github.VictorAlbertos.Jolyglot:gson:0.0.4'
+    implementation 'com.github.weixuefeng.rxcache:runtime:1.8.8-3x'
+
+    //
+    implementation 'com.github.wendux:DSBridge-Android:3.0-SNAPSHOT'
+    implementation files('libs/ez-vcard-0.10.5.jar')
+}

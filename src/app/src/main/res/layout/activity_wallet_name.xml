@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+    <include layout="@layout/layout_toolbar_with_title"/>
+
+    <EditText
+        style="@style/create_wallet_edittext"
+        android:id="@+id/walletNameEdittext"
+        android:padding="@dimen/big_padding"
+        android:hint="@string/update_wallet_name"
+        android:layout_margin="@dimen/normal_margin"
+        />
+
+    <Button
+        android:id="@+id/confirm_button"
+        android:layout_margin="@dimen/big_margin"
+        android:text="@string/confirm"
+        android:textColor="@color/white"
+        style="@style/main_button"/>
+
+</LinearLayout>

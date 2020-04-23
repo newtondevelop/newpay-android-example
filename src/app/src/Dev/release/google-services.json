@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "819681182397",
+    "firebase_url": "https://newpay-f14a3.firebaseio.com",
+    "project_id": "newpay-f14a3",
+    "storage_bucket": "newpay-f14a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819681182397:android:e50320073200607f",
+        "android_client_info": {
+          "package_name": "org.newtonproject.newpay.android.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819681182397-vsks7cq3nrjsgtt58mvuki1cpkq29isn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAWv5GAifQBREB3yh4D-lkP55cMOen3lo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819681182397:android:3f1d3aea42318cf2",
+        "android_client_info": {
+          "package_name": "org.newtonproject.newpay.android.release"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819681182397-vsks7cq3nrjsgtt58mvuki1cpkq29isn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAWv5GAifQBREB3yh4D-lkP55cMOen3lo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

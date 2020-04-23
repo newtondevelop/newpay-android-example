@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:background="@color/white"
+    android:id="@+id/itemLayout"
+    android:paddingLeft="@dimen/big_padding"
+    android:paddingRight="@dimen/big_padding"
+    android:paddingTop="@dimen/normal_padding"
+    android:paddingBottom="@dimen/normal_padding"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="NAME"
+        android:textColor="@color/mainColor"
+        android:layout_marginLeft="2dp"
+        />
+    <ImageView
+        android:id="@+id/flagImageView"
+        app:layout_constraintTop_toTopOf="@id/nameTextView"
+        app:layout_constraintBottom_toBottomOf="@id/nameTextView"
+        app:layout_constraintStart_toEndOf="@id/nameTextView"
+        android:layout_marginLeft="@dimen/small_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_random"
+        />
+
+    <ImageView
+        android:id="@+id/codeFlagImageView"
+        app:layout_constraintTop_toTopOf="@id/flagImageView"
+        app:layout_constraintBottom_toBottomOf="@id/flagImageView"
+        app:layout_constraintStart_toEndOf="@id/flagImageView"
+        android:layout_marginLeft="@dimen/small_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_password"
+        />
+    <TextView
+        android:id="@+id/amountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="1 NEW"
+        />
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="04-13"
+        android:layout_marginLeft="2dp"
+        />
+
+</android.support.constraint.ConstraintLayout>

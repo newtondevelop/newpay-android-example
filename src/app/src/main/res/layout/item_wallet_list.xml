@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/walletItemLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_wallet_item"
+    android:gravity="center_vertical"
+        >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/logo"
+        android:layout_marginLeft="@dimen/big_margin"
+        android:paddingLeft="@dimen/normal_padding"
+        />
+    <TextView
+        android:id="@+id/walletTextView"
+        style="@style/me_item_text_left"
+        android:singleLine="true"
+        android:textColor="@color/main_black"
+        android:layout_marginLeft="@dimen/big_margin"
+        android:textSize="@dimen/home_wallet_size"
+        android:maxLength="12"
+        android:text="walletName"
+        />
+    <TextView
+        android:id="@+id/walletBalanceTextView"
+        style="@style/me_item_text_right"
+        android:text="0 New"
+        android:paddingRight="@dimen/big_padding"
+        android:singleLine="true"
+        />
+</LinearLayout>

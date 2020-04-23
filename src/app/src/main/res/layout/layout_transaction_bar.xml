@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.AppBarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/main_gradient"
+    style="@style/NormalAppBar"
+    >
+
+    <FrameLayout
+        android:id="@+id/toolFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        >
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:theme="@style/AppTheme.Toolbar"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextAppearance="@style/AppTheme.Toolbar.Title"
+            android:layout_width="match_parent"
+            app:navigationIcon="@mipmap/back_arrow"
+            android:layout_height="?attr/actionBarSize" />
+        <TextView
+            android:id="@+id/centerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/transaction_record"
+            android:textSize="@dimen/app_title_size"
+            android:textColor="@color/colorWhite"
+            android:visibility="visible"
+            android:gravity="center"
+            android:layout_gravity="center"
+            />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/big_padding">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/normal_padding"
+            android:text="@string/account_balance"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/account_balance" />
+
+        <TextView
+            android:id="@+id/accountBalanceTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/big_padding"
+            android:text="0.0000NEW"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/account" />
+    </LinearLayout>
+</android.support.design.widget.AppBarLayout>

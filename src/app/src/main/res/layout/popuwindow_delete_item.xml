@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:elevation="2dp"
+    android:layout_height="wrap_content"
+    >
+    <TextView
+        android:id="@+id/updateNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/update_friend_name"
+        android:padding="@dimen/big_padding"
+        android:textAlignment="center"
+        android:background="@drawable/bg_pop_textview"
+        />
+    <TextView
+        android:id="@+id/deleteTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_item"
+        android:padding="@dimen/big_padding"
+        android:textAlignment="center"
+        android:background="@drawable/bg_pop_textview"
+        app:layout_constraintTop_toBottomOf="@id/updateNameTextView"
+        />
+</android.support.constraint.ConstraintLayout>

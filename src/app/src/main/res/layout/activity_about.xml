@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        >
+        <include layout="@layout/layout_simple_toolbar" />
+        <TextView
+            android:id="@+id/centerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/me_about"
+            android:textSize="@dimen/app_title_size"
+            android:textColor="@color/mainColor"
+            android:visibility="visible"
+            android:gravity="center"
+            android:layout_gravity="center"
+            />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:padding="@dimen/big_padding"
+            android:layout_marginTop="50dp">
+
+            <ImageView
+                android:layout_width="138dp"
+                android:layout_height="41dp"
+                android:src="@mipmap/newton_logo" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/image"
+            android:layout_marginTop="@dimen/big_margin"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/checkUpdateTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_pay_linearlayout_item"
+                android:text="@string/check_update"
+                android:padding="@dimen/big_padding"
+                android:visibility="gone"
+                />
+            <TextView
+                android:id="@+id/userOfTermsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/big_margin"
+                android:text="@string/user_terms"
+                android:background="@drawable/bg_pay_linearlayout_item"
+                android:padding="@dimen/big_padding"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="25dp"
+            android:gravity="bottom"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/versionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="v1.0"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/normal_padding"
+                android:text="@string/newton_copytright_en"
+                android:textSize="@dimen/copyright_size"
+                android:textColor="@color/copyright_color"
+                android:textAlignment="center" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

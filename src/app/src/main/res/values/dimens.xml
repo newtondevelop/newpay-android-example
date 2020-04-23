@@ -1,0 +1,98 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+	<dimen name="app_title_size">17sp</dimen>
+	<dimen name="app_subtitle_size">14sp</dimen>
+	<dimen name="fab_margin">16dp</dimen>
+    <dimen name="app_bar_height">200dp</dimen>
+    <dimen name="item_width">200dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+	<dimen name="xsmall_padding">2dp</dimen>
+	<dimen name="small_padding">4dp</dimen>
+	<dimen name="normal_padding">8dp</dimen>
+	<dimen name="normal_big_padding">12dp</dimen>
+	<dimen name="big_padding">16dp</dimen>
+	<dimen name="half_large_padding">32dp</dimen>
+	<dimen name="large_padding">64dp</dimen>
+
+	<dimen name="small_margin">4dp</dimen>
+	<dimen name="normal_margin">8dp</dimen>
+	<dimen name="big_margin">16dp</dimen>
+	<dimen name="normal_big_margin">20dp</dimen>
+	<dimen name="half_large_margin">32dp</dimen>
+	<dimen name="half_mid_margin">48dp</dimen>
+	<dimen name="large_margin">64dp</dimen>
+	<dimen name="card_top_height">10dp</dimen>
+
+	<dimen name="xxsmall_text">8sp</dimen>
+	<dimen name="xsmall_text">10sp</dimen>
+	<dimen name="small_text">12sp</dimen>
+	<dimen name="normal_text">16sp</dimen>
+	<dimen name="title_text">26sp</dimen>
+	<dimen name="mnemonic_text_size">16sp</dimen>
+    <dimen name="list_content_margin">72dp</dimen>
+    <dimen name="list_group_head">14sp</dimen>
+    <dimen name="title_height_small">48dp</dimen>
+    <dimen name="title_height_normal">56dp</dimen>
+
+    <dimen name="intro_height">340dp</dimen>
+    <dimen name="intro_img_size">200dp</dimen>
+	<!--backup-->
+	<dimen name="back_up_title_dimen">16sp</dimen>
+	<dimen name="mnemonic_text_padding_left_right">15dp</dimen>
+	<dimen name="mnemonic_text_padding_top_bottom">15dp</dimen>
+	<dimen name="copyright_size">12sp</dimen>
+	<dimen name="mnemonic_line_height">8dp</dimen>
+	<dimen name="create_import_wallet_button_size">18sp</dimen>
+	<!--pay popuwindow -->
+	<dimen name="pay_key">14sp</dimen>
+	<dimen name="pay_value">12sp</dimen>
+	<dimen name="corner_radius">5dp</dimen>
+	<!--transaction-->
+	<dimen name="account_balance">16sp</dimen>
+	<dimen name="account">20sp</dimen>
+	<dimen name="more_detail_size">18sp</dimen>
+	<dimen name="transaction_textview_title_size">16sp</dimen>
+	<dimen name="transaction_textview_detail_size">14sp</dimen>
+	<dimen name="pay_success_size">16sp</dimen>
+	<dimen name="pay_success_amount_size">24sp</dimen>
+	<dimen name="complete_size">18sp</dimen>
+	<dimen name="set_amount_size">22sp</dimen>
+	<dimen name="edittext_padding_start">22dp</dimen>
+	<dimen name="edittext_padding_end">22dp</dimen>
+	<!--create wallet -->
+	<dimen name="create_tip_dimen">14sp</dimen>
+	<dimen name="tag_title_dimen">16sp</dimen>
+	<dimen name="hint_input_dimen">12sp</dimen>
+	<dimen name="home_wallet_size">16sp</dimen>
+	<!--new cash-->
+	<dimen name="cash_font">24sp</dimen>
+	<!-- home -->
+	<dimen name="home_image_size">32dp</dimen>
+	<dimen name="home_section_title_size">20sp</dimen>
+	<dimen name="home_wallet_card_normal_height">184dp</dimen>
+	<dimen name="home_wallet_card_open_height">310dp</dimen>
+	<!-- button corners-->
+	<dimen name="main_button_corner">20dp</dimen>
+	<dimen name="main_button_textsize">14sp</dimen>
+
+	<dimen name="node_card_height">224dp</dimen>
+	<!-- mining -->
+	<dimen name="mining_card_height">368dp</dimen>
+	<dimen name="mining_line_chart_height">160dp</dimen>
+	<!-- community node -->
+	<dimen name="community_node_card_height">184dp</dimen>
+	<!--global-->
+	<dimen name="normal_tip_size">14sp</dimen>
+	<dimen name="normal_content_size">16sp</dimen>
+	<dimen name="normal_title_size">22sp</dimen>
+	<dimen name="adapter_item_normal_height">64dp</dimen>
+	<dimen name="button_bottom">30dp</dimen>
+
+	<dimen name="auth_logo_size">25dp</dimen>
+	<dimen name="dapp_icon_size">45dp</dimen>
+	<dimen name="node_name_max_width">150dp</dimen>
+	<dimen name="node_name_max_max_width">180dp</dimen>
+</resources>

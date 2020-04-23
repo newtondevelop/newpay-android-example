@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        >
+        <include layout="@layout/layout_simple_toolbar" />
+        <TextView
+            android:id="@+id/centerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/language_settings"
+            android:textSize="@dimen/app_title_size"
+            android:textColor="@color/mainColor"
+            android:visibility="visible"
+            android:gravity="center"
+            android:layout_gravity="center"
+            />
+    </FrameLayout>
+    <LinearLayout
+        android:id="@+id/chinese"
+        style="@style/me_item_layout">
+        <TextView
+            style="@style/setting_item_text_left"
+            android:id="@+id/chineseTextView"
+            android:text="@string/chinese"
+            />
+    </LinearLayout>
+    <include layout="@layout/divide_view"/>
+    <LinearLayout
+        android:id="@+id/english"
+        style="@style/me_item_layout">
+        <TextView
+            style="@style/setting_item_text_left"
+            android:id="@+id/englishTextView"
+            android:text="@string/english"
+            />
+    </LinearLayout>
+    <include layout="@layout/divide_view"/>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/japan"
+        style="@style/me_item_layout">
+        <TextView
+            style="@style/setting_item_text_left"
+            android:id="@+id/japanTextView"
+            android:text="@string/japanese"
+            />
+    </LinearLayout>
+    <include layout="@layout/divide_view"/>
+</LinearLayout>

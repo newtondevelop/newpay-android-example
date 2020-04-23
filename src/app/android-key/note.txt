@@ -1,0 +1,3 @@
+newpay-android.keystore
+secret:70f7b07b8398dfe86e751363cabddbcf
+source:newpay-android-md5sum

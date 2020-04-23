@@ -1,0 +1,30 @@
+{
+	"defaultExtraInfo": {
+		"CHANNEL": "channel-dev"
+	},
+	"channelInfoList": [
+		{
+			"channel":"www",
+			"extraInfo": {
+				"CHANNEL": "channel-www"
+			}
+		},
+		{
+			"channel":"google-play",
+			"extraInfo": {
+				"CHANNEL": "channel-googleplay"
+			}
+		},
+		{
+			"channel":"yyb",
+			"extraInfo": {
+				"CHANNEL": "channel-yyb"
+			}
+		},{
+			"channel":"bee_store",
+			"extraInfo": {
+				"CHANNEL": "channel-bee-store"
+			}
+		}
+	]
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <include layout="@layout/layout_toolbar_with_title"/>
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/friendsList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/emptyRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            >
+            <ImageView
+                android:id="@+id/emptyImageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/empty_friend"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="gone"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_friends"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@id/emptyImageView"
+                />
+        </android.support.constraint.ConstraintLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/addAddressBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            android:layout_gravity="bottom|end"
+            app:fabSize="auto"
+            app:elevation="5dp"
+            app:backgroundTint="@color/divide_color"
+            android:src="@drawable/ic_add_black_24dp"
+            app:rippleColor="@color/divide_color"
+            />
+        <org.newtonproject.newtoncore.android.components.IndexView
+            android:id="@+id/indexView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            />
+        <FrameLayout
+            android:id="@+id/popRootView"
+            android:layout_width="match_parent"
+            android:layout_marginRight="@dimen/big_margin"
+            android:layout_height="1dp"/>
+    </FrameLayout>
+
+</LinearLayout>

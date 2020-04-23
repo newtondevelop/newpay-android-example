@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/contentInfoBg"
+    android:paddingTop="@dimen/xsmall_padding"
+    android:paddingBottom="@dimen/xsmall_padding">
+    <!--android:layout_height="@dimen/title_height_small"-->
+    <TextView
+        android:id="@+id/title"
+        android:textColor="@color/list_group_head"
+        android:textSize="@dimen/list_group_head"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/big_padding"
+        android:layout_marginEnd="@dimen/big_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</FrameLayout>

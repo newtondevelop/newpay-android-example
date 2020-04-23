@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        >
+        <include layout="@layout/layout_simple_toolbar" />
+        <TextView
+            android:id="@+id/centerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/set_account"
+            android:textSize="@dimen/app_title_size"
+            android:textColor="@color/mainColor"
+            android:visibility="visible"
+            android:gravity="center"
+            android:layout_gravity="center"
+            />
+    </FrameLayout>
+    <TextView
+        android:id="@+id/send_amount_textview"
+        style="@style/send.textview.title"
+        android:text="@string/amount"
+        android:layout_marginTop="@dimen/big_margin"
+        />
+    <EditText
+        android:id="@+id/amountEdittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_amount"
+        android:paddingStart="@dimen/edittext_padding_start"
+        android:paddingEnd="@dimen/edittext_padding_end"
+        android:inputType="numberDecimal"
+        android:background="@drawable/bg_wallet_item"
+        />
+    <Button
+        android:id="@+id/confirm_button"
+        android:layout_margin="@dimen/big_margin"
+        app:layout_constraintTop_toBottomOf="@id/amountEdittext"
+        android:text="@string/confirm"
+        style="@style/main_button"
+        />
+
+</LinearLayout>

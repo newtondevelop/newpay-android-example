@@ -1,0 +1,15 @@
+// protoc -I proto/hntx --go_out=proto/hntx proto/hntx/hntx.proto
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.newtonproject.newpay.android.proto";
+option java_outer_classname = "HNTx";
+option go_package = "hntx";
+
+package hntx;
+
+message Data {
+    string DAppId = 1 [json_name = "dapp_id"];
+    string serialNo = 2 [json_name = "serial_no"];
+}

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        >
+        <include layout="@layout/layout_simple_toolbar" />
+        <TextView
+            android:id="@+id/centerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/me_community"
+            android:textSize="@dimen/app_title_size"
+            android:textColor="@color/mainColor"
+            android:visibility="visible"
+            android:gravity="center"
+            android:layout_gravity="center"
+            />
+    </FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                style="@style/me_item_layout"
+                android:id="@+id/facebookLayout"
+                >
+                <ImageView
+                    style="@style/settings_icon_style"
+                    android:src="@mipmap/facebook"
+                    />
+                <TextView
+                    style="@style/settings_text_style"
+                    android:text="@string/facebook"
+                    />
+            </LinearLayout>
+            <include layout="@layout/divide_view"/>
+            <LinearLayout
+                style="@style/me_item_layout"
+                android:id="@+id/twitterLayout"
+                >
+                <ImageView
+                    style="@style/settings_icon_style"
+                    android:src="@mipmap/twitter"
+                    />
+                <TextView
+                    style="@style/settings_text_style"
+                    android:text="@string/twitter"
+                    />
+            </LinearLayout>
+            <include layout="@layout/divide_view"/>
+
+            <LinearLayout
+                style="@style/me_item_layout"
+                android:id="@+id/telegramLayout"
+                >
+                <ImageView
+                    style="@style/settings_icon_style"
+                    android:src="@mipmap/telegram"
+                    />
+                <TextView
+                    style="@style/settings_text_style"
+                    android:text="@string/telegram"
+                    />
+            </LinearLayout>
+            <include layout="@layout/divide_view"/>
+
+
+            <LinearLayout
+                style="@style/me_item_layout"
+                android:id="@+id/telegramChineseLayout"
+                >
+                <ImageView
+                    style="@style/settings_icon_style"
+                    android:src="@mipmap/telegram"
+                    />
+                <TextView
+                    style="@style/settings_text_style"
+                    android:text="@string/telegramChinese"
+                    />
+            </LinearLayout>
+            <include layout="@layout/divide_view"/>
+
+            <LinearLayout
+                style="@style/me_item_layout"
+                android:id="@+id/telegramJapanLayout"
+                >
+                <ImageView
+                    style="@style/settings_icon_style"
+                    android:src="@mipmap/telegram"
+                    />
+                <TextView
+                    style="@style/settings_text_style"
+                    android:text="@string/telegramJapan"
+                    />
+            </LinearLayout>
+            <include layout="@layout/divide_view"/>
+
+            <LinearLayout
+                style="@style/me_item_layout"
+                android:id="@+id/telegramKoreaLayout"
+                >
+                <ImageView
+                    style="@style/settings_icon_style"
+                    android:src="@mipmap/telegram"
+                    />
+                <TextView
+                    style="@style/settings_text_style"
+                    android:text="@string/telegramKorea"
+                    />
+            </LinearLayout>
+            <include layout="@layout/divide_view"/>
+
+            <LinearLayout
+                style="@style/me_item_layout"
+                android:id="@+id/wechat"
+                >
+                <ImageView
+                    style="@style/settings_icon_style"
+                    android:src="@mipmap/wechat"
+                    />
+                <TextView
+                    style="@style/settings_text_style"
+                    android:text="@string/wechat"
+                    />
+            </LinearLayout>
+            <include layout="@layout/divide_view"/>
+
+            <LinearLayout
+                style="@style/me_item_layout"
+                android:id="@+id/reddit"
+                >
+                <ImageView
+                    style="@style/settings_icon_style"
+                    android:src="@mipmap/reddit"
+                    />
+                <TextView
+                    style="@style/settings_text_style"
+                    android:text="@string/reddit"
+                    />
+            </LinearLayout>
+            <include layout="@layout/divide_view"/>
+
+            <LinearLayout
+                style="@style/me_item_layout"
+                android:id="@+id/googleGroup"
+                >
+                <ImageView
+                    style="@style/settings_icon_style"
+                    android:src="@mipmap/google_group"
+                    />
+                <TextView
+                    style="@style/settings_text_style"
+                    android:text="@string/googleGroup"
+                    />
+            </LinearLayout>
+            <include layout="@layout/divide_view"/>
+
+            <LinearLayout
+                style="@style/me_item_layout"
+                android:id="@+id/medlium"
+                >
+                <ImageView
+                    style="@style/settings_icon_style"
+                    android:src="@mipmap/medium"
+                    />
+                <TextView
+                    style="@style/settings_text_style"
+                    android:text="@string/medlium"
+                    />
+            </LinearLayout>
+            <include layout="@layout/divide_view"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

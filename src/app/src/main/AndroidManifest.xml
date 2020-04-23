@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="org.newtonproject.newtoncore.android"
+    android:versionName="0.1"
+    android:versionCode="1"
+    >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" tools:node="remove"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" tools:node="remove"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+
+    <!-- NFC -->
+    <uses-permission android:name="android.permission.NFC"/>
+
+    <application
+        android:name="org.newtonproject.newtoncore.android.App"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="${app_name}"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:testOnly="false"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:name, android:theme, android:allowBackup, android:icon, android:label"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name="org.newtonproject.newtoncore.android.views.splash.SplashActivity"
+            android:theme="@style/SplashTheme"
+            android:screenOrientation="portrait"
+            android:alwaysRetainTaskState="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.newtonproject.newtoncore.android.views.account.WalletsActivity"
+            android:label="@string/title_account_list"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name="org.newtonproject.newtoncore.android.views.account.ImportWalletActivity"
+            android:label="@string/title_import"
+            android:windowSoftInputMode="stateAlwaysVisible|adjustPan"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name="org.newtonproject.newtoncore.android.views.transaction.TransactionsActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_import" />
+        <activity
+            android:name="org.newtonproject.newtoncore.android.views.transaction.TransactionDetailActivity"
+            android:label="@string/title_transaction_details"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name="org.newtonproject.newtoncore.android.views.transaction.MyAddressActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden"
+            />
+        <activity
+            android:name="org.newtonproject.newtoncore.android.views.transaction.TokensActivity"
+            android:label="@string/title_my_tokens"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name="org.newtonproject.newtoncore.android.views.transaction.SendActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="newpay" android:host="${authorize_pay}"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.newtonproject.newtoncore.android.views.transaction.ConfirmationActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_confirmation" />
+        <activity
+            android:name="org.newtonproject.newtoncore.android.views.transaction.AddTokenActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_add_token" />
+        <activity
+            android:name="org.newtonproject.newtoncore.android.views.transaction.GasSettingsActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_send_settings" />
+        <activity
+            android:name="org.newtonproject.newtoncore.android.views.device.ScanActivity"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            />
+        <activity android:name="org.newtonproject.newtoncore.android.views.account.CreateWalletActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="org.newtonproject.newtoncore.android.views.account.BackupActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="org.newtonproject.newtoncore.android.views.account.ValidateBackupActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="org.newtonproject.newtoncore.android.views.home.HomeActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            />
+        <activity android:name="org.newtonproject.newtoncore.android.views.settings.AboutActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="org.newtonproject.newtoncore.android.views.account.WalletsListActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="org.newtonproject.newtoncore.android.views.account.WalletDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="org.newtonproject.newtoncore.android.views.settings.LanguageSettingsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="org.newtonproject.newtoncore.android.views.settings.NewPaySettingsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="org.newtonproject.newtoncore.android.views.contact.AddressBookActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/x-vcard"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="org.newtonproject.newtoncore.android.views.contact.AddFriendActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="org.newtonproject.newtoncore.android.views.transaction.PaySuccessActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="org.newtonproject.newtoncore.android.views.contact.UpdateWalletNameActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="org.newtonproject.newtoncore.android.views.intro.WebViewActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name="org.newtonproject.newtoncore.android.views.account.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+        <activity android:name="org.newtonproject.newtoncore.android.views.user.UpdateFriendActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/update_friend_name"
+            />
+        <activity android:name="org.newtonproject.newtoncore.android.views.transaction.SetAmountActivity"
+            android:label="@string/set_account"
+            android:screenOrientation="portrait"/>
+        <activity android:name="org.newtonproject.newtoncore.android.views.contact.UpdateWalletPasswordActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name="org.newtonproject.newtoncore.android.views.settings.SwitchNetworkActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name="org.newtonproject.newtoncore.android.views.device.AuthPinActivity"
+            android:screenOrientation="portrait"/>
+        <!-- account -->
+        <provider
+            android:authorities="${applicationId}"
+            android:name="android.support.v4.content.FileProvider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
+        <activity android:name="org.newtonproject.newtoncore.android.views.base.ConfirmActivity" android:screenOrientation="portrait"/>
+        <activity android:name="org.newtonproject.newtoncore.android.views.base.CreateWalletSuccessActivity" android:screenOrientation="portrait"/>
+
+        <meta-data
+            android:name="CHANNEL"
+            android:value="${CHANNEL}" />
+        <meta-data
+            android:name="APP_ENV"
+            android:value="${APP_ENV}" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="87bf1359927ae47661c59e06bec77a576a99260c"
+            />
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false"
+            />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/push"
+            />
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="360"/>
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="720"/>
+</application>
+</manifest>

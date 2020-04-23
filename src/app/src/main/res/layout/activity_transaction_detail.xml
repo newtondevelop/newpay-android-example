@@ -1,0 +1,174 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include
+        layout="@layout/layout_toolbar_with_title"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/normal_margin"
+            android:layout_marginLeft="@dimen/big_margin"
+            android:layout_marginRight="@dimen/big_margin"
+            android:layout_marginBottom="@dimen/big_padding"
+            >
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/big_padding"
+                android:background="@drawable/bg_node_detail_card">
+
+                <ImageView
+                    android:id="@+id/titleImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="152dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/img_tx_detail_bg"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="0dp" />
+
+                <TextView
+                    android:id="@+id/title"
+                    style="@style/tx_detail_title"
+                    android:layout_marginLeft="@dimen/normal_margin"
+                    android:layout_marginTop="@dimen/big_margin"
+                    android:text="@string/title_transaction_details"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/amountTextView"
+                    style="@style/tx_detail_amount"
+                    android:layout_marginLeft="@dimen/normal_margin"
+                    android:text="0 NEW"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title" />
+
+                <TextView
+                    android:id="@+id/fee"
+                    style="@style/tx_detail_fee"
+                    android:layout_marginLeft="@dimen/normal_margin"
+                    android:text="@string/text_tx_detail_fee"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/amountTextView" />
+
+                <TextView
+                    android:id="@+id/status"
+                    style="@style/tx_detail_status"
+                    android:layout_marginLeft="@dimen/normal_margin"
+                    android:text="@string/text_success"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fee" />
+
+                <LinearLayout
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/big_margin"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/titleImg">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="@dimen/normal_padding">
+
+                        <TextView
+                            style="@style/tx_detail_from"
+                            android:text="@string/text_from" />
+
+                        <org.newtonproject.newtoncore.android.widget.EasyCopyTextView
+                            android:id="@+id/fromAddressTextView"
+                            style="@style/tx_detail_address" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="@dimen/normal_padding">
+
+                        <TextView
+                            style="@style/tx_detail_from"
+                            android:text="@string/text_to" />
+
+                        <org.newtonproject.newtoncore.android.widget.EasyCopyTextView
+                            android:id="@+id/toAddressTextView"
+                            style="@style/tx_detail_address" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/note"
+                    style="@style/tx_detail_from"
+                    android:layout_marginLeft="@dimen/normal_padding"
+                    android:layout_marginTop="@dimen/normal_margin"
+                    android:text="@string/text_note"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/content" />
+
+                <TextView
+                    android:id="@+id/noteTextView"
+                    style="@style/tx_detail_from_match"
+                    android:layout_marginLeft="@dimen/normal_padding"
+                    android:text="@string/text_no_note"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/note" />
+
+                <TextView
+                    android:id="@+id/txid"
+                    style="@style/tx_detail_from"
+                    android:layout_marginLeft="@dimen/normal_padding"
+                    android:layout_marginTop="@dimen/normal_margin"
+                    android:text="@string/text_txid"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/noteTextView" />
+
+                <org.newtonproject.newtoncore.android.widget.EasyCopyTextView
+                    android:id="@+id/txidTextView"
+                    style="@style/tx_detail_txid"
+                    android:layout_marginLeft="@dimen/normal_padding"
+                    android:layout_marginRight="@dimen/normal_margin"
+                    android:minLines="3"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txid" />
+
+                <TextView
+                    android:id="@+id/time"
+                    style="@style/tx_detail_from"
+                    android:layout_marginLeft="@dimen/normal_padding"
+                    android:layout_marginTop="@dimen/normal_margin"
+                    android:text="@string/text_time_big"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txidTextView" />
+
+                <TextView
+                    android:id="@+id/timeTextView"
+                    style="@style/tx_detail_address"
+                    android:layout_marginLeft="@dimen/normal_padding"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/time" />
+
+                <Button
+                    android:id="@+id/more_detail"
+                    style="@style/secondary_button"
+                    android:layout_marginTop="50dp"
+                    android:text="@string/text_view_on_explorer"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/timeTextView" />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+    </ScrollView>
+</LinearLayout>

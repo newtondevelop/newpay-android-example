@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bgColor"
+    >
+    <include layout="@layout/layout_toolbar_with_title"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                style="@style/settings_section_title"
+                android:text="@string/text_app_settings"
+                />
+            <LinearLayout
+                android:id="@+id/languageLayout"
+                style="@style/me_item_layout"
+                >
+                <TextView
+                    style="@style/setting_item_text_left"
+                    android:text="@string/language"
+                    />
+                <TextView
+                    android:id="@+id/currentLanguageTextView"
+                    style="@style/me_item_text_right"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/more"
+                    android:layout_gravity="center_vertical"
+                    />
+            </LinearLayout>
+            <include layout="@layout/divide_view"/>
+            <LinearLayout
+                android:id="@+id/networkLayout"
+                style="@style/me_item_layout"
+                >
+                <TextView
+                    android:text="@string/switch_network"
+                    style="@style/setting_item_text_left"
+                    />
+                <TextView
+                    android:id="@+id/currentNetNameTextView"
+                    style="@style/me_item_text_right"
+                    />
+                <ImageView
+                    style="@style/settings_icon_style"
+                    android:src="@mipmap/more"
+                    />
+            </LinearLayout>
+            <include layout="@layout/divide_view"/>
+            <LinearLayout
+                android:id="@+id/switchLockAppLayout"
+                style="@style/me_item_layout">
+                <TextView
+                    android:text="@string/application_lock"
+                    style="@style/setting_item_text_left"
+                    />
+                <org.newtonproject.newtoncore.android.widget.NoDragSwitchCompat
+                    android:id="@+id/switchCompat"
+                    style="@style/settings_icon_style"
+                    android:theme="@style/switchTheme"
+                    />
+            </LinearLayout>
+            <include layout="@layout/divide_view"/>
+            <LinearLayout
+                android:id="@+id/touchIdLayout"
+                style="@style/me_item_layout">
+                <TextView
+                    android:text="@string/touch_id"
+                    style="@style/setting_item_text_left"
+                    />
+                <org.newtonproject.newtoncore.android.widget.NoDragSwitchCompat
+                    android:id="@+id/touchIdSwitchCompat"
+                    android:focusableInTouchMode="false"
+                    style="@style/settings_icon_style"
+                    android:theme="@style/switchTheme"
+                    />
+            </LinearLayout>
+            <include layout="@layout/divide_view"/>
+            <TextView
+                style="@style/settings_section_title"
+                android:text="@string/text_settings_more"
+                />
+            <include layout="@layout/divide_view"/>
+            <LinearLayout
+                android:id="@+id/aboutLayout"
+                style="@style/me_item_layout"
+                >
+                <TextView
+                    style="@style/setting_item_text_left"
+                    android:text="@string/me_about"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/more"
+                    android:layout_gravity="center_vertical"
+                    />
+            </LinearLayout>
+            <include layout="@layout/divide_view"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

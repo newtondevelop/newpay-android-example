@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="green">#2fbb4f</color>
+	<color name="red">#f7506c</color>
+	<color name="white">#FFFFFFFF</color>
+	<color name="black">#313849</color>
+
+	<color name="colorPrimary">#FFFFFF</color>
+	<color name="colorPrimaryDark">#1E76CE</color>
+	<color name="colorAccent">#2e91db</color>
+
+    <!--<color name="title">#89000000</color>-->
+	<color name="secondary_text">#40000000</color>
+
+	<color name="bottom_dialog_title">#89000000</color>
+	<color name="bottom_dialog_item">#dd000000</color>
+
+    <color name="list_group_head">#40000000</color>
+
+	<color name="semitransparentWhite">#AAFFFFFF</color>
+
+	<color name="QRCodeBlackColor">#FF000000</color>
+	<color name="QRCodeWhiteColor">#FFFFFFFF</color>
+
+    <color name="item_icon_tint">#89000000</color>
+	<color name="mnemonic_background_color">#f4f4f4</color>
+	<color name="divide_color">#f7f7f7</color>
+	<color name="contact_divide_color">#f5f5f5</color>
+
+	<color name="desc_title">#666666</color>
+	<color name="desc_color">#9a9a9a</color>
+	<color name="mnemonic_color">#6c6c6c</color>
+
+	<color name="copyright_color">#b0b0b8</color>
+	<color name="main_black">#303030</color>
+	<color name="hint_color">#d3d1d1</color>
+	<color name="home_tab_normal">#97989A</color>
+	<color name="home_tab_pressed">#424242</color>
+
+	<color name="bottom_item_text_color">#5C7EFA</color>
+	<color name="old_gradient_start_color">#3F6AF9</color>
+	<color name="old_gradient_end_color">#48C7BB</color>
+	<color name="gradient_start_color">#35A4D9</color>
+	<color name="gradient_end_color">#35A4D9</color>
+	<color name="selected_mnemonic_color">#4DA5E0</color>
+	<color name="receive_color">#25A276</color>
+	<color name="send_color">#F14A0F</color>
+	<!--transaction detail-->
+	<color name="transaction_textview_title_color">#303030</color>
+	<color name="transaction_textview_detail_color">#696969</color>
+	<!--update-->
+	<color name="colorBlack">#000000</color>
+	<color name="mainBackground">#222732</color>
+	<color name="colorWhite">#ffffff</color>
+	<color name="colorGray">#999999</color>
+	<color name="colorRed">#11ff0000</color>
+	<color name="list_item_title_text_color">#666666</color>
+	<color name="list_item_grey_text_color">#AFAFAF</color>
+	<color name="splitter_gray">#DADADA</color>
+	<!--create wallet -->
+	<color name="create_tip_bg_color">#f4f4f4</color>
+	<color name="create_tip_color">#9a9a9a</color>
+	<color name="hint_input_color">#d3d1d1</color>
+	<color name="disable_color">#d3d7d6</color>
+	<color name="transparent_color">#00000000</color>
+
+	<color name="diy_main_color">#EFEFEF</color>
+	<color name="invite_color_start">#FFB902</color>
+	<color name="invite_color_end">#FFDA5A</color>
+	<color name="invite_color_3">#FFA239</color>
+	<color name="warning_color">#f4511e</color>
+	<color name="success_color">#009688</color>
+	<color name="card_solid">#1A516C</color>
+
+	<!-- home balance start color -->
+	<color name="home_balance_start_color">#0A3250</color>
+	<color name="home_balance_end_color">#176088</color>
+
+	<color name="home_mining_start_color">#E96D4C</color>
+	<color name="home_mining_end_color">#F0B457</color>
+
+	<color name="home_supernode_start_color">#27187F</color>
+	<color name="home_supernode_end_color">#8A70CF</color>
+
+	<color name="home_guide_bg_color">#EAF0E8</color>
+	<color name="home_guide_text_color">#387091</color>
+
+	<color name="home_mining_subtitle_color">#F2B49F</color>
+	<color name="home_supernode_mynode_bg_start_color">#2C1E6E</color>
+	<color name="home_supernode_mynode_bg_end_color">#5F4690</color>
+	<color name="home_supernode_sub_color">#9932cc</color>
+
+	<!-- newpay 1.0 color -->
+	<color name="bgColor">#FFFFFF</color>
+	<color name="mainColor">#131313</color>
+	<color name="secondaryColor">#7F131313</color>
+	<color name="lightColor">#FFFFFF</color>
+	<color name="lightBg">#CCFFFFFF</color>
+	<color name="secondaryLight">#99FFFFFF</color>
+	<color name="success">#20C5A0</color>
+	<color name="successBg">#DB20C5A0</color>
+	<color name="warning">#FF5949</color>
+	<color name="warningBg">#D8FF5949</color>
+	<color name="info">#3CBFD4</color>
+	<color name="infoBg">#DB3CBFD4</color>
+	<color name="accent">#CC131313</color>
+	<color name="disabled">#4C131313</color>
+	<color name="seperator">#0C131313</color>
+	<color name="nodeSeperator">#7968A2</color>
+	<color name="contentInfoBg">#0C131313</color>
+	<color name="blockBg">#19131313</color>
+	<color name="accentMining">#FF4A29</color>
+	<color name="maskMining">#3FFFFFFF</color>
+	<color name="accentNode">#6A5898</color>
+	<color name="accentNewid">#2B8DFF</color>
+	<color name="accentOnColor">#3F131313</color>
+	<color name="shadow">#3F000D15</color>
+	<color name="pending">#F5C623</color>
+	<color name="divide">#D8D8D8</color>
+	<color name="cloud">#4AA6DE</color>
+	<color name="contentBgPressed">#19131313</color>
+	<color name="backupColor">#E32146</color>
+	<color name="nodeChartBgActive">#F0EEF4</color>
+	<color name="nodeChartNotElected">#D5D0E1</color>
+	<color name="nodeChartBackup">#ACA2C5</color>
+	<color name="nodeChartElected">#6A5898</color>
+
+	<color name="redPocketMainColor">#E95C38</color>
+	<color name="redPocketSecondaryColor">#90E95C38</color>
+	<color name="redPocketTitleColor">#FFEBB5</color>
+	<color name="redPocketBg">#F3F3F3</color>
+
+	<color name="redBgStart">#faf7ee</color>
+	<color name="redBgEnd">#f6eedc</color>
+	<color name="redLucky">#F3A612</color>
+	<color name="redTip">#A96223</color>
+	<color name="redCopyCode">#DBAE44</color>
+
+	<color name="colorBinance">#F0B90B</color>
+	<!--1.3.1-->
+	<color name="colorNodeTypeSelected">#ff6a5898</color>
+	<color name="colorNodeTypeNormal">#fff9f9f9</color>
+	<color name="colorBusinessBg">#FFF3EC</color>
+	<color name="colorPartnerBg">#1AD5A346</color>
+	<color name="colorTechnology">#EDF1FE</color>
+	<color name="colorBusinessText">#FC8C4A</color>
+	<color name="colorPartnerText">#FFD59E37</color>
+	<color name="colorTechnologyText">#5178F7</color>
+	<color name="noLightColor">#D3CAEA</color>
+	<color name="bgTotalReward">#F9F8FC</color>
+	<color name="normalTipColor">#FF999999</color>
+	<color name="nodeBtColor">#FFE3AB</color>
+	<color name="nodeBgColor">#9079CB</color>
+	<color name="nodeTypeBg">#F4F2FB</color>
+	<color name="nodeTypeTextColor">#9780D0</color>
+
+	<color name="popup_window_item_text">#FF333333</color>
+	<color name="line_color">#FFF0F0F0</color>
+</resources>
+
+
