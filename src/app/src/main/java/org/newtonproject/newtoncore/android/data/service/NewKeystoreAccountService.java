@@ -7,12 +7,12 @@ import org.newtonproject.newtoncore.android.utils.MnemonicForNewton;
 import org.newtonproject.newtoncore.android.utils.NewAddressUtils;
 import org.newtonproject.newtoncore.android.utils.SecureRandomUtils;
 import org.newtonproject.newtoncore.android.utils.StringUtil;
-import org.web3j.crypto.Credentials;
-import org.web3j.crypto.ECKeyPair;
-import org.web3j.crypto.RawTransaction;
-import org.web3j.crypto.Sign;
-import org.web3j.crypto.TransactionEncoder;
-import org.web3j.utils.Numeric;
+import org.newtonproject.web3j.crypto.Credentials;
+import org.newtonproject.web3j.crypto.ECKeyPair;
+import org.newtonproject.web3j.crypto.RawTransaction;
+import org.newtonproject.web3j.crypto.Sign;
+import org.newtonproject.web3j.crypto.TransactionEncoder;
+import org.newtonproject.web3j.utils.Numeric;
 
 import java.io.File;
 import java.math.BigInteger;
@@ -211,6 +211,4 @@ public class NewKeystoreAccountService implements AccountKeystoreService {
         return Single.fromCallable(() -> keyStore.importKeyStore(keystore, password, newPassword))
                 .subscribeOn(Schedulers.io());
     }
-
-
 }

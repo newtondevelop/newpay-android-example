@@ -1,8 +1,8 @@
 package org.newtonproject.newtoncore.android.utils;
 
 import org.newtonproject.newtoncore.android.C;
-import org.web3j.crypto.Hash;
-import org.web3j.utils.Numeric;
+import org.newtonproject.web3j.crypto.Hash;
+import org.newtonproject.web3j.utils.Numeric;
 
 import java.math.BigInteger;
 /**

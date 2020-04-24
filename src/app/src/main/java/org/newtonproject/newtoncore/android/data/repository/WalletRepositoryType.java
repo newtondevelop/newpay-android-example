@@ -1,7 +1,7 @@
 package org.newtonproject.newtoncore.android.data.repository;
 
 import org.newtonproject.newtoncore.android.data.entity.common.Wallet;
-import org.web3j.protocol.core.methods.request.Transaction;
+import org.newtonproject.web3j.protocol.core.methods.request.Transaction;
 
 import java.math.BigInteger;
 import java.util.ArrayList;

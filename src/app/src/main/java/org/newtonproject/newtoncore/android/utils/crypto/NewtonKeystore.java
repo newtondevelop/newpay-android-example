@@ -14,8 +14,8 @@ import org.bitcoinj.wallet.UnreadableWalletException;
 import org.newtonproject.newtoncore.android.data.entity.common.Wallet;
 import org.newtonproject.newtoncore.android.utils.NewAddressUtils;
 import org.newtonproject.newtoncore.android.utils.StringUtil;
-import org.web3j.crypto.CipherException;
-import org.web3j.utils.Numeric;
+import org.newtonproject.web3j.crypto.CipherException;
+import org.newtonproject.web3j.utils.Numeric;
 
 import java.io.File;
 import java.io.IOException;

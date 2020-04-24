@@ -21,8 +21,8 @@ import org.newtonproject.newtoncore.android.router.GasSettingsRouter;
 import org.newtonproject.newtoncore.android.router.ScanRouter;
 import org.newtonproject.newtoncore.android.utils.NewAddressUtils;
 import org.newtonproject.newtoncore.android.views.intro.WebViewActivity;
-import org.web3j.protocol.core.methods.request.Transaction;
-import org.web3j.utils.Numeric;
+import org.newtonproject.web3j.protocol.core.methods.request.Transaction;
+import org.newtonproject.web3j.utils.Numeric;
 
 import java.math.BigInteger;
 import java.util.Map;

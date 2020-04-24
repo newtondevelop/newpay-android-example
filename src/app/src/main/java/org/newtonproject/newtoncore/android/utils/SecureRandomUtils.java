@@ -1,6 +1,6 @@
 package org.newtonproject.newtoncore.android.utils;
 
-import org.web3j.crypto.LinuxSecureRandom;
+import org.newtonproject.web3j.crypto.LinuxSecureRandom;
 
 import java.security.SecureRandom;
 

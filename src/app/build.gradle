@@ -6,23 +6,9 @@ def buildTime() {
     return df.format(new Date())
 }
 
-buildscript {
-    repositories {
-        maven { url 'https://maven.fabric.io/public' }
-    }
-
-    dependencies {
-        classpath 'io.fabric.tools:gradle:1.+'
-    }
-}
 apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
-apply plugin: 'io.fabric'
 apply plugin: 'walle'
-
-repositories {
-    maven { url 'https://maven.fabric.io/public' }
-}
 
 
 project.ext {
@@ -206,19 +192,12 @@ dependencies {
 
     // PW
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':core')
-    implementation files('libs/crypto-3.3.1-android.jar')
-    implementation files('libs/abi-3.3.1-android.jar')
-    implementation files('libs/core-3.3.1-android.jar')
-    implementation files('libs/rxjava-1.2.4.jar')
     implementation('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') {
         transitive = true
     }
     implementation('com.crashlytics.sdk.android:answers:1.4.3@aar') {
         transitive = true
     }
-    implementation files('libs/pinyin4j-2.5.0.jar')
-    implementation files('libs/moji4j-1.2.0.jar')
 
     // font
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
@@ -234,7 +213,10 @@ dependencies {
     implementation 'com.github.VictorAlbertos.Jolyglot:gson:0.0.4'
     implementation 'com.github.weixuefeng.rxcache:runtime:1.8.8-3x'
 
-    //
     implementation 'com.github.wendux:DSBridge-Android:3.0-SNAPSHOT'
     implementation files('libs/ez-vcard-0.10.5.jar')
+    // bip44
+    implementation 'org.newtondeveloper:newpay-keystore:0.0.1'
+    // newton web3j
+    implementation 'org.newtonproject.web3j:core:4.1.7-android'
 }

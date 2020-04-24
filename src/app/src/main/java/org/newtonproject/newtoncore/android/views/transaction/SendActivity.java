@@ -56,7 +56,7 @@ import org.newtonproject.newtoncore.android.viewmodels.SendViewModel;
 import org.newtonproject.newtoncore.android.viewmodels.SendViewModelFactory;
 import org.newtonproject.newtoncore.android.widget.HelperEditTextLayout;
 import org.newtonproject.newtoncore.android.widget.PayPopuwindow;
-import org.web3j.utils.Numeric;
+import org.newtonproject.web3j.utils.Numeric;
 
 import java.math.BigInteger;
 import java.util.Arrays;

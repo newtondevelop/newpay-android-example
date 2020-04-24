@@ -11,7 +11,7 @@ import org.newtonproject.newtoncore.android.data.interact.FetchGasSettingsIntera
 import org.newtonproject.newtoncore.android.data.interact.FindDefaultWalletInteract;
 import org.newtonproject.newtoncore.android.data.repository.TokenRepository;
 import org.newtonproject.newtoncore.android.router.GasSettingsRouter;
-import org.web3j.protocol.core.methods.request.Transaction;
+import org.newtonproject.web3j.protocol.core.methods.request.Transaction;
 
 import java.math.BigInteger;
 

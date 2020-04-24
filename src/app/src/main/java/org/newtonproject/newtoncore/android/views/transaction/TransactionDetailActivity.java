@@ -20,7 +20,7 @@ import org.newtonproject.newtoncore.android.utils.NewAddressUtils;
 import org.newtonproject.newtoncore.android.utils.StringUtil;
 import org.newtonproject.newtoncore.android.viewmodels.TransactionDetailViewModel;
 import org.newtonproject.newtoncore.android.viewmodels.TransactionDetailViewModelFactory;
-import org.web3j.utils.Numeric;
+import org.newtonproject.web3j.utils.Numeric;
 
 import java.math.BigInteger;
 

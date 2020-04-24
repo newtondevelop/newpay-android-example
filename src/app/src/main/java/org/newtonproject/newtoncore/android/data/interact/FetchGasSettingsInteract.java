@@ -3,7 +3,7 @@ package org.newtonproject.newtoncore.android.data.interact;
 
 import org.newtonproject.newtoncore.android.data.entity.common.GasSettings;
 import org.newtonproject.newtoncore.android.data.repository.WalletRepositoryType;
-import org.web3j.protocol.core.methods.request.Transaction;
+import org.newtonproject.web3j.protocol.core.methods.request.Transaction;
 
 import java.math.BigInteger;
 

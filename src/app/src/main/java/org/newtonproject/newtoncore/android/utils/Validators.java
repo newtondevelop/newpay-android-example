@@ -6,7 +6,7 @@ import org.bitcoinj.crypto.MnemonicCode;
 import org.bitcoinj.crypto.MnemonicException;
 import org.newtonproject.newtoncore.android.C;
 import org.newtonproject.newtoncore.android.utils.bnb.Crypto;
-import org.web3j.utils.Numeric;
+import org.newtonproject.web3j.utils.Numeric;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

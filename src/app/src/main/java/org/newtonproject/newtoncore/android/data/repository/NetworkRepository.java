@@ -7,9 +7,8 @@ import org.newtonproject.newtoncore.android.R;
 import org.newtonproject.newtoncore.android.data.entity.common.NetworkInfo;
 import org.newtonproject.newtoncore.android.utils.Logger;
 import org.newtonproject.newtoncore.android.utils.StringUtil;
-import org.web3j.protocol.Web3j;
-import org.web3j.protocol.Web3jFactory;
-import org.web3j.protocol.http.HttpService;
+import org.newtonproject.web3j.protocol.Web3j;
+import org.newtonproject.web3j.protocol.http.HttpService;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -168,8 +167,8 @@ public class NetworkRepository implements NetworkRepositoryType {
 				.subscribe(request -> {
 					long startTime = System.currentTimeMillis();
 					Logger.e(request.rpcServerUrl);
-					Web3j web3j = Web3jFactory.build(new HttpService(request.rpcServerUrl));
-					web3j.netVersion().observable().subscribe(e -> {
+					Web3j web3j = Web3j.build(new HttpService(request.rpcServerUrl));
+					Disposable subscribe1 = web3j.netVersion().flowable().subscribe(e -> {
 						long endTime = System.currentTimeMillis();
 						map.put(request.name, endTime - startTime);
 						Logger.e("accessed is true");

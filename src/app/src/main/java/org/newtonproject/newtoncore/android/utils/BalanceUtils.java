@@ -3,7 +3,7 @@ package org.newtonproject.newtoncore.android.utils;
 import android.text.TextUtils;
 
 import org.newtonproject.newtoncore.android.C;
-import org.web3j.utils.Convert;
+import org.newtonproject.web3j.utils.Convert;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;

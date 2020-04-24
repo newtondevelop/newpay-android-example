@@ -12,12 +12,12 @@ import org.spongycastle.crypto.digests.SHA256Digest;
 import org.spongycastle.crypto.generators.PKCS5S2ParametersGenerator;
 import org.spongycastle.crypto.generators.SCrypt;
 import org.spongycastle.crypto.params.KeyParameter;
-import org.web3j.crypto.CipherException;
-import org.web3j.crypto.ECKeyPair;
-import org.web3j.crypto.Hash;
-import org.web3j.crypto.Keys;
-import org.web3j.utils.Numeric;
-import org.web3j.utils.Strings;
+import org.newtonproject.web3j.crypto.CipherException;
+import org.newtonproject.web3j.crypto.ECKeyPair;
+import org.newtonproject.web3j.crypto.Hash;
+import org.newtonproject.web3j.crypto.Keys;
+import org.newtonproject.web3j.utils.Numeric;
+import org.newtonproject.web3j.utils.Strings;
 
 import java.math.BigInteger;
 import java.nio.charset.Charset;

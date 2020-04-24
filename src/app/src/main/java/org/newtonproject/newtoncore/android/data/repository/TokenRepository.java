@@ -7,20 +7,20 @@ import org.newtonproject.newtoncore.android.data.entity.common.Wallet;
 import org.newtonproject.newtoncore.android.data.service.TokenExplorerClientType;
 
 import org.newtonproject.newtoncore.android.utils.Logger;
-import org.web3j.abi.FunctionEncoder;
-import org.web3j.abi.FunctionReturnDecoder;
-import org.web3j.abi.TypeReference;
-import org.web3j.abi.datatypes.Address;
-import org.web3j.abi.datatypes.Bool;
-import org.web3j.abi.datatypes.Function;
-import org.web3j.abi.datatypes.Type;
-import org.web3j.abi.datatypes.generated.Uint256;
-import org.web3j.protocol.Web3j;
-import org.web3j.protocol.Web3jFactory;
-import org.web3j.protocol.core.DefaultBlockParameterName;
-import org.web3j.protocol.core.methods.request.Transaction;
-import org.web3j.protocol.http.HttpService;
-import org.web3j.utils.Numeric;
+import org.newtonproject.web3j.abi.FunctionEncoder;
+import org.newtonproject.web3j.abi.FunctionReturnDecoder;
+import org.newtonproject.web3j.abi.TypeReference;
+import org.newtonproject.web3j.abi.datatypes.Address;
+import org.newtonproject.web3j.abi.datatypes.Bool;
+import org.newtonproject.web3j.abi.datatypes.Function;
+import org.newtonproject.web3j.abi.datatypes.Type;
+import org.newtonproject.web3j.abi.datatypes.generated.Uint256;
+import org.newtonproject.web3j.protocol.Web3j;
+import org.newtonproject.web3j.protocol.core.DefaultBlockParameterName;
+import org.newtonproject.web3j.protocol.core.methods.request.Transaction;
+import org.newtonproject.web3j.protocol.core.methods.response.EthCall;
+import org.newtonproject.web3j.protocol.http.HttpService;
+import org.newtonproject.web3j.utils.Numeric;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -60,7 +60,7 @@ public class TokenRepository implements TokenRepositoryType {
     }
 
     private void buildWeb3jClient(NetworkInfo defaultNetwork) {
-        web3j = Web3jFactory.build(new HttpService(defaultNetwork.rpcServerUrl, httpClient, false));
+        web3j = Web3j.build(new HttpService(defaultNetwork.rpcServerUrl, httpClient, false));
     }
 
     @Override
@@ -129,7 +129,7 @@ public class TokenRepository implements TokenRepositoryType {
     }
 
     private BigDecimal getBalance(Wallet wallet, TokenInfo tokenInfo) throws Exception {
-        org.web3j.abi.datatypes.Function function = balanceOf(wallet.address);
+        Function function = balanceOf(wallet.address);
         String responseValue = callSmartContractFunction(function, tokenInfo.address, wallet);
 
         List<Type> response = FunctionReturnDecoder.decode(
@@ -141,18 +141,18 @@ public class TokenRepository implements TokenRepositoryType {
         }
     }
 
-    private static org.web3j.abi.datatypes.Function balanceOf(String owner) {
-        return new org.web3j.abi.datatypes.Function(
+    private static Function balanceOf(String owner) {
+        return new Function(
                 "balanceOf",
                 Collections.singletonList(new Address(owner)),
                 Collections.singletonList(new TypeReference<Uint256>() {}));
     }
 
     private String callSmartContractFunction(
-            org.web3j.abi.datatypes.Function function, String contractAddress, Wallet wallet) throws Exception {
+            Function function, String contractAddress, Wallet wallet) throws Exception {
         String encodedFunction = FunctionEncoder.encode(function);
 
-        org.web3j.protocol.core.methods.response.EthCall response = web3j.ethCall(
+        EthCall response = web3j.ethCall(
                 Transaction.createEthCallTransaction(wallet.address, contractAddress, encodedFunction),
                 DefaultBlockParameterName.LATEST)
                 .sendAsync().get();

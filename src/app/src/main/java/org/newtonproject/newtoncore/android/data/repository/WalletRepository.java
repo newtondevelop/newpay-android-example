@@ -3,9 +3,10 @@ package org.newtonproject.newtoncore.android.data.repository;
 import org.newtonproject.newtoncore.android.data.entity.common.Wallet;
 import org.newtonproject.newtoncore.android.data.service.AccountKeystoreService;
 import org.newtonproject.newtoncore.android.utils.NewAddressUtils;
-import org.web3j.protocol.Web3jFactory;
-import org.web3j.protocol.core.DefaultBlockParameterName;
-import org.web3j.protocol.http.HttpService;
+import org.newtonproject.web3j.protocol.Web3j;
+import org.newtonproject.web3j.protocol.core.DefaultBlockParameterName;
+import org.newtonproject.web3j.protocol.core.methods.request.Transaction;
+import org.newtonproject.web3j.protocol.http.HttpService;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -135,7 +136,7 @@ public class WalletRepository implements WalletRepositoryType {
 
     @Override
     public Single<BigInteger> balanceInWei(Wallet wallet) {
-        return Single.fromCallable(() -> Web3jFactory
+        return Single.fromCallable(() -> Web3j
                 .build(new HttpService(networkRepository.getDefaultNetwork().rpcServerUrl, httpClient, false))
                 .ethGetBalance(NewAddressUtils.newAddress2HexAddress(wallet.address), DefaultBlockParameterName.LATEST)
                 .send()
@@ -145,7 +146,7 @@ public class WalletRepository implements WalletRepositoryType {
 
     @Override
     public Single<BigInteger> getGasPrice() {
-        return Single.fromCallable(() -> Web3jFactory
+        return Single.fromCallable(() -> Web3j
                 .build(new HttpService(networkRepository.getDefaultNetwork().rpcServerUrl, httpClient, false))
                 .ethGasPrice()
                 .send()
@@ -154,8 +155,8 @@ public class WalletRepository implements WalletRepositoryType {
     }
 
     @Override
-    public Single<BigInteger> estimateGas(org.web3j.protocol.core.methods.request.Transaction transaction) {
-        return Single.fromCallable(() -> Web3jFactory
+    public Single<BigInteger> estimateGas(Transaction transaction) {
+        return Single.fromCallable(() -> Web3j
                 .build(new HttpService(networkRepository.getDefaultNetwork().rpcServerUrl, httpClient, false))
                 .ethEstimateGas(transaction)
                 .send()

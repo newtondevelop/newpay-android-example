@@ -3,7 +3,7 @@ package org.newtonproject.newtoncore.android.utils;
 import org.spongycastle.crypto.digests.SHA512Digest;
 import org.spongycastle.crypto.generators.PKCS5S2ParametersGenerator;
 import org.spongycastle.crypto.params.KeyParameter;
-import org.web3j.crypto.MnemonicUtils;
+import org.newtonproject.web3j.crypto.MnemonicUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.web3j.crypto.Hash.sha256;
+import static org.newtonproject.web3j.crypto.Hash.sha256;
 /**
  * @author weixuefeng@lubangame.com
  * @version $Rev$
@@ -97,10 +97,11 @@ public class MnemonicForNewton extends MnemonicUtils {
         return ((KeyParameter) gen.generateDerivedParameters(SEED_KEY_SIZE)).getKey();
     }
 
-    private static void validateMnemonic(String mnemonic) {
+    public static boolean validateMnemonic(String mnemonic) {
         if (mnemonic == null || mnemonic.trim().isEmpty()) {
             throw new IllegalArgumentException("Mnemonic is required to generate a seed");
         }
+        return true;
     }
 
     private static boolean[] nextElevenBits(boolean[] bits, int i) {
@@ -157,7 +158,7 @@ public class MnemonicForNewton extends MnemonicUtils {
         return value;
     }
 
-    private static byte calculateChecksum(byte[] initialEntropy) {
+    public static byte calculateChecksum(byte[] initialEntropy) {
         int ent = initialEntropy.length * 8;
         byte mask = (byte) (0xff << 8 - ent / 32);
         byte[] bytes = sha256(initialEntropy);

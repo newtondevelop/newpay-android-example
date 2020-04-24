@@ -243,6 +243,7 @@ public class HomeFragment extends BaseFragment<HomeModel> implements OnCompleteP
             mViewModel.checkHasBackUpWallet();
             C.IS_CHECK_BACKUP = false;
         }
+        progress(false);
     }
 
     // get local profile and init profile manager.

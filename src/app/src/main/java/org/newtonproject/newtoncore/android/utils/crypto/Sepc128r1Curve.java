@@ -14,7 +14,7 @@ import org.spongycastle.jce.spec.ECNamedCurveParameterSpec;
 import org.spongycastle.jce.spec.ECParameterSpec;
 import org.spongycastle.jce.spec.ECPrivateKeySpec;
 import org.spongycastle.math.ec.ECCurve;
-import org.web3j.utils.Numeric;
+import org.newtonproject.web3j.utils.Numeric;
 
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;

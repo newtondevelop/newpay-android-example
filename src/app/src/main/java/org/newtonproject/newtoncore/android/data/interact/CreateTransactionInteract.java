@@ -4,7 +4,7 @@ package org.newtonproject.newtoncore.android.data.interact;
 import org.newtonproject.newtoncore.android.data.entity.common.Wallet;
 import org.newtonproject.newtoncore.android.data.repository.PasswordStore;
 import org.newtonproject.newtoncore.android.data.repository.TransactionRepositoryType;
-import org.web3j.crypto.Sign;
+import org.newtonproject.web3j.crypto.Sign;
 
 import java.math.BigInteger;
 import java.util.HashMap;

@@ -21,7 +21,7 @@ import org.newtonproject.newtoncore.android.data.entity.common.ContactsInfo;
 import org.newtonproject.newtoncore.android.data.entity.common.Wallet;
 import org.newtonproject.newtoncore.android.data.repository.ContactsRepository;
 import org.newtonproject.newtoncore.android.data.repository.SharedPreferenceRepository;
-import org.web3j.utils.Numeric;
+import org.newtonproject.web3j.utils.Numeric;
 
 import java.lang.reflect.Type;
 import java.text.DecimalFormat;

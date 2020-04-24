@@ -1,7 +1,7 @@
 package org.newtonproject.newtoncore.android.data.service;
 
 import org.newtonproject.newtoncore.android.data.entity.common.Wallet;
-import org.web3j.crypto.Sign;
+import org.newtonproject.web3j.crypto.Sign;
 
 import java.math.BigInteger;
 import java.util.ArrayList;

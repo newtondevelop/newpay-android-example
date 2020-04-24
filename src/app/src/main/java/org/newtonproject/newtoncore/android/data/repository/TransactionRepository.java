@@ -7,14 +7,13 @@ import org.newtonproject.newtoncore.android.data.entity.common.TransactionRespon
 import org.newtonproject.newtoncore.android.data.entity.common.Wallet;
 import org.newtonproject.newtoncore.android.data.service.AccountKeystoreService;
 import org.newtonproject.newtoncore.android.data.service.BlockExplorerClientType;
-import org.web3j.crypto.Sign;
-import org.web3j.protocol.Web3j;
-import org.web3j.protocol.Web3jFactory;
-import org.web3j.protocol.core.DefaultBlockParameterName;
-import org.web3j.protocol.core.methods.response.EthGetTransactionCount;
-import org.web3j.protocol.core.methods.response.EthSendTransaction;
-import org.web3j.protocol.http.HttpService;
-import org.web3j.utils.Numeric;
+import org.newtonproject.web3j.crypto.Sign;
+import org.newtonproject.web3j.protocol.Web3j;
+import org.newtonproject.web3j.protocol.core.DefaultBlockParameterName;
+import org.newtonproject.web3j.protocol.core.methods.response.EthGetTransactionCount;
+import org.newtonproject.web3j.protocol.core.methods.response.EthSendTransaction;
+import org.newtonproject.web3j.protocol.http.HttpService;
+import org.newtonproject.web3j.utils.Numeric;
 
 import java.math.BigInteger;
 import java.util.HashMap;
@@ -65,7 +64,7 @@ public class TransactionRepository implements TransactionRepositoryType {
 
 	@Override
 	public Single<String> createTransaction(Wallet from, String toAddress, BigInteger subunitAmount, BigInteger gasPrice, BigInteger gasLimit, byte[] data, String password) {
-		final Web3j web3j = Web3jFactory.build(new HttpService(networkRepository.getDefaultNetwork().rpcServerUrl));
+		final Web3j web3j = Web3j.build(new HttpService(networkRepository.getDefaultNetwork().rpcServerUrl));
 		return Single.fromCallable(() -> {
 			EthGetTransactionCount ethGetTransactionCount = web3j
 					.ethGetTransactionCount(from.address, DefaultBlockParameterName.LATEST)
@@ -86,7 +85,7 @@ public class TransactionRepository implements TransactionRepositoryType {
 
 	@Override
 	public Single<String> createTransaction(Wallet from, String toAddress, BigInteger subunitAmount, BigInteger gasPrice, BigInteger gasLimit, byte[] data, String password, byte[] salt, byte[] iv, byte[] ciphertext) {
-		final Web3j web3j = Web3jFactory.build(new HttpService(networkRepository.getDefaultNetwork().rpcServerUrl));
+		final Web3j web3j = Web3j.build(new HttpService(networkRepository.getDefaultNetwork().rpcServerUrl));
 		return Single.fromCallable(() -> {
 			EthGetTransactionCount ethGetTransactionCount = web3j
 					.ethGetTransactionCount(from.address, DefaultBlockParameterName.LATEST)
@@ -107,7 +106,7 @@ public class TransactionRepository implements TransactionRepositoryType {
 
 	@Override
 	public Single<String> getRawTransaction(Wallet from, String to, BigInteger subunitAmount, BigInteger gasPrice, BigInteger gasLimit, byte[] data, String password) {
-		final Web3j web3j = Web3jFactory.build(new HttpService(networkRepository.getDefaultNetwork().rpcServerUrl));
+		final Web3j web3j = Web3j.build(new HttpService(networkRepository.getDefaultNetwork().rpcServerUrl));
 		return Single.fromCallable(() -> {
 			EthGetTransactionCount ethGetTransactionCount = web3j
 					.ethGetTransactionCount(from.address, DefaultBlockParameterName.LATEST)

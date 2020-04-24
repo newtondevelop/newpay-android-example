@@ -1,9 +1,9 @@
 package org.newtonproject.newtoncore.android.data.entity.request;
 
-import org.web3j.abi.datatypes.Utf8String;
-import org.web3j.abi.datatypes.generated.Bytes16;
-import org.web3j.abi.datatypes.generated.Uint256;
-import org.web3j.abi.datatypes.generated.Uint8;
+import org.newtonproject.web3j.abi.datatypes.Utf8String;
+import org.newtonproject.web3j.abi.datatypes.generated.Bytes16;
+import org.newtonproject.web3j.abi.datatypes.generated.Uint256;
+import org.newtonproject.web3j.abi.datatypes.generated.Uint8;
 
 import java.math.BigInteger;
 

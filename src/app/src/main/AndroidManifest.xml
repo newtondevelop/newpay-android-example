@@ -193,16 +193,8 @@
             android:name="APP_ENV"
             android:value="${APP_ENV}" />
         <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="87bf1359927ae47661c59e06bec77a576a99260c"
-            />
-        <meta-data
             android:name="firebase_messaging_auto_init_enabled"
             android:value="false"
-            />
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/push"
             />
         <meta-data
             android:name="design_width_in_dp"

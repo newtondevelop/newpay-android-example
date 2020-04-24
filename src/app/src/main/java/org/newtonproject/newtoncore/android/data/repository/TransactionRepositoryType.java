@@ -3,7 +3,7 @@ package org.newtonproject.newtoncore.android.data.repository;
 import org.newtonproject.newtoncore.android.data.entity.common.Transaction;
 import org.newtonproject.newtoncore.android.data.entity.common.TransactionResponse;
 import org.newtonproject.newtoncore.android.data.entity.common.Wallet;
-import org.web3j.crypto.Sign;
+import org.newtonproject.web3j.crypto.Sign;
 
 import java.math.BigInteger;
 import java.util.HashMap;
