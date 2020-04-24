@@ -70,9 +70,16 @@ public class BlockExplorerClient implements BlockExplorerClientType {
 
 	@Override
 	public Observable<TransactionResponse> fetchTransactions(String address, int pageNum, boolean forceUpdate) {
-		return cacheProvider.fetchTransactions(etherScanApiClient
-				.fetchTransactions(address, pageNum), new DynamicKeyGroup(pageNum, address), new EvictDynamicKeyGroup(forceUpdate))
-				.subscribeOn(Schedulers.io());
+		if(pageNum == 1) {
+			return cacheProvider.fetchTransactions(etherScanApiClient
+					.fetchTransactions(address, pageNum), new DynamicKeyGroup(pageNum, address), new EvictDynamicKeyGroup(forceUpdate))
+					.subscribeOn(Schedulers.io());
+		} else {
+			return etherScanApiClient
+					.fetchTransactions(address, pageNum)
+					.subscribeOn(Schedulers.io());
+		}
+
 	}
 
 	@Override
