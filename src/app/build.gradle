@@ -32,9 +32,9 @@ project.ext {
 android {
     signingConfigs {
         release {
-            keyAlias 'newpay-android'
+            keyAlias 'newton-core'
             keyPassword '#password#'
-            storeFile file('android-key/newpay-android.keystore')
+            storeFile file('android-key/newton-core.keystore')
             storePassword '#password#'
         }
     }
