@@ -46,13 +46,19 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/rootView"
         >
-
+        <View
+            android:id="@+id/backupDivide1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/normal_margin"
+            android:background="@color/contentInfoBg"
+            />
         <LinearLayout
             android:id="@+id/friendLinearLayout"
             style="@style/me_item_layout"
@@ -76,6 +82,12 @@
                 android:layout_gravity="center_vertical"
                 />
         </LinearLayout>
+        <View
+            android:id="@+id/backupDivide2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/normal_margin"
+            android:background="@color/contentInfoBg"
+            />
         <LinearLayout
             android:id="@+id/backupLinearLayout"
             style="@style/me_item_layout"
@@ -131,6 +143,12 @@
                 android:layout_gravity="center_vertical"
                 />
         </LinearLayout>
+        <View
+            android:id="@+id/backupDivide4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/normal_margin"
+            android:background="@color/contentInfoBg"
+            />
     </LinearLayout>
     </ScrollView>
 </LinearLayout>

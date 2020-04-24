@@ -42,6 +42,7 @@
                 android:layout_gravity="center_vertical"
                 android:gravity="bottom"
                 android:orientation="vertical"
+                android:layout_marginTop="80dp"
                 android:padding="@dimen/big_padding">
 
                 <TextView
