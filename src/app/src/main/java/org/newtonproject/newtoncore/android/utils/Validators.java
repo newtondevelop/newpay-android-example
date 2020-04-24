@@ -4,8 +4,6 @@ import android.text.TextUtils;
 
 import org.bitcoinj.crypto.MnemonicCode;
 import org.bitcoinj.crypto.MnemonicException;
-import org.newtonproject.newtoncore.android.C;
-import org.newtonproject.newtoncore.android.utils.bnb.Crypto;
 import org.newtonproject.web3j.utils.Numeric;
 
 import java.util.regex.Matcher;
@@ -58,21 +56,5 @@ public class Validators {
             e.printStackTrace();
         }
         return false;
-    }
-
-    public static boolean checkKeystore(String keyStore, String password) {
-        return false;
-    }
-
-    public static boolean checkNodeId(String nodeId) {
-        return !nodeId.contains(" ");
-    }
-
-    public static boolean validateBnBAddress(String bnbAddress) {
-        if(bnbAddress == null || bnbAddress.length() == 0) return false;
-        if(C.CURRENT_NET == C.NET_TYPE.MAINNET && !bnbAddress.startsWith("bnb")) return false;
-        if(C.CURRENT_NET == C.NET_TYPE.TESTNET && !bnbAddress.startsWith("tbnb")) return false;
-        if(C.CURRENT_NET == C.NET_TYPE.DEVNET) return false;
-        return Crypto.checkAddress(bnbAddress);
     }
 }

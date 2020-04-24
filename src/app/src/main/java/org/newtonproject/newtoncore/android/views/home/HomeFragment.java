@@ -17,21 +17,14 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-import org.greenrobot.eventbus.EventBus;
 import org.newtonproject.newtoncore.android.C;
 import org.newtonproject.newtoncore.android.R;
-import org.newtonproject.newtoncore.android.data.entity.common.EventMessage;
 import org.newtonproject.newtoncore.android.data.entity.common.ScanResultInfo;
 import org.newtonproject.newtoncore.android.data.entity.common.Wallet;
-import org.newtonproject.newtoncore.android.data.entity.hepnode.NewNetAuth;
-import org.newtonproject.newtoncore.android.data.entity.hepnode.NewNetPay;
-import org.newtonproject.newtoncore.android.data.entity.hepnode.NewNetProofSubmit;
 import org.newtonproject.newtoncore.android.data.entity.response.AssetInfo;
-import org.newtonproject.newtoncore.android.data.entity.response.MarketToken;
 import org.newtonproject.newtoncore.android.data.entity.response.ProfileInfo;
 import org.newtonproject.newtoncore.android.data.manager.AccountManager;
 import org.newtonproject.newtoncore.android.data.manager.ProfileManager;
-import org.newtonproject.newtoncore.android.router.TransactionsRouter;
 import org.newtonproject.newtoncore.android.utils.BalanceUtils;
 import org.newtonproject.newtoncore.android.utils.ScanUtils;
 import org.newtonproject.newtoncore.android.utils.StringUtil;
@@ -163,10 +156,6 @@ public class HomeFragment extends BaseFragment<HomeModel> implements OnCompleteP
         mViewModel.isNeedBackUpWallet().observe(this, this::isNeedBackUpWallet);
         // on progress with show progress dialog
         mViewModel.onProgress().observe(this, this::onProgress);
-        // on auth
-        mViewModel.onNewNetAuth().observe(this, this::onNewNetAuth);
-        mViewModel.onNewNetPay().observe(this, this::onNewNetPay);
-        mViewModel.onNewNetProofSubmit().observe(this, this::onNewNetProofSubmit);
         if (C.APP_ENV.equals("product")) {
             fraudTipLayout.setVisibility(View.GONE);
         }
@@ -362,20 +351,5 @@ public class HomeFragment extends BaseFragment<HomeModel> implements OnCompleteP
     public void onPasswordComplete(String password) {
         sigmessage = StringUtil.getNonce();
         mViewModel.signMessageAndGetPublicKey(currentWallet.address, password, sigmessage);
-    }
-
-    private void onNewNetProofSubmit(NewNetProofSubmit newNetProofSubmit) {
-        EventMessage<NewNetProofSubmit> message = new EventMessage<>(EventMessage.NEWNET_CACHE_PROOF, newNetProofSubmit);
-        EventBus.getDefault().postSticky(message);
-    }
-
-    private void onNewNetPay(NewNetPay newNetPay) {
-        EventMessage<NewNetPay> message = new EventMessage<>(EventMessage.NEWNET_CACHE_PAY, newNetPay);
-        EventBus.getDefault().postSticky(message);
-    }
-
-    private void onNewNetAuth(NewNetAuth newNetAuth) {
-        EventMessage<NewNetAuth> message = new EventMessage<>(EventMessage.NEWNET_CACHE_AUTH, newNetAuth);
-        EventBus.getDefault().postSticky(message);
     }
 }

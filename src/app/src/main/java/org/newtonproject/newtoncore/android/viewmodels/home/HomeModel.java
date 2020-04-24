@@ -8,22 +8,20 @@ import android.content.Intent;
 import android.support.v4.app.Fragment;
 
 import org.newtonproject.newtoncore.android.data.entity.common.Wallet;
-import org.newtonproject.newtoncore.android.data.entity.hepnode.NewNetAuth;
-import org.newtonproject.newtoncore.android.data.entity.hepnode.NewNetPay;
-import org.newtonproject.newtoncore.android.data.entity.hepnode.NewNetProofSubmit;
 import org.newtonproject.newtoncore.android.data.entity.response.AssetInfo;
 import org.newtonproject.newtoncore.android.data.interact.CreateTransactionInteract;
 import org.newtonproject.newtoncore.android.data.interact.FetchWalletsInteract;
 import org.newtonproject.newtoncore.android.data.interact.GetDefaultWalletBalance;
+import org.newtonproject.newtoncore.android.data.manager.AccountManager;
 import org.newtonproject.newtoncore.android.data.repository.NetworkRepositoryType;
 import org.newtonproject.newtoncore.android.data.repository.PreferenceRepositoryType;
-import org.newtonproject.newtoncore.android.data.manager.AccountManager;
 import org.newtonproject.newtoncore.android.router.MyAddressRouter;
 import org.newtonproject.newtoncore.android.router.ScanRouter;
 import org.newtonproject.newtoncore.android.router.SendRouter;
 import org.newtonproject.newtoncore.android.router.TransactionsRouter;
 import org.newtonproject.newtoncore.android.viewmodels.BaseViewModel;
 import org.newtonproject.newtoncore.android.views.account.BackupActivity;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -113,28 +111,23 @@ public class HomeModel extends BaseViewModel {
 
     private MutableLiveData<String> cacheBalance = new MutableLiveData<>();
 
-    // faucet
 
-    // on assert info
     private MutableLiveData<AssetInfo> onAssetInfo = new MutableLiveData<>();
 
     public LiveData<AssetInfo> onAssertInfo() {
         return onAssetInfo;
     }
 
-    // on public and newid
     private MutableLiveData<HashMap<String, String>> onPublicKeyAndNewId = new MutableLiveData<>();
 
-    // on total balance
     private MutableLiveData<String> onTotalCacheBalance = new MutableLiveData<>();
 
     public LiveData<String> onTotalCacheBalance() {
         return onTotalCacheBalance;
     }
-    // need backup
     private MutableLiveData<Boolean> isNeedBackUpWallet = new MutableLiveData<>();
     public LiveData<Boolean> isNeedBackUpWallet() { return isNeedBackUpWallet; }
-    // show progress
+
     private MutableLiveData<Boolean> onProgress = new MutableLiveData<>();
     public LiveData<Boolean> onProgress() { return onProgress; }
 
@@ -293,17 +286,5 @@ public class HomeModel extends BaseViewModel {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         mContext.startActivity(intent);
     }
-
-    // hep result
-    private MutableLiveData<NewNetAuth> onNewNetAuth = new MutableLiveData<>();
-    public LiveData<NewNetAuth> onNewNetAuth() { return onNewNetAuth; }
-
-
-    private MutableLiveData<NewNetPay> onNewNetPay = new MutableLiveData<>();
-    public LiveData<NewNetPay> onNewNetPay() { return onNewNetPay; }
-
-
-    private MutableLiveData<NewNetProofSubmit> onNewNetProofSubmit = new MutableLiveData<>();
-    public LiveData<NewNetProofSubmit> onNewNetProofSubmit() { return onNewNetProofSubmit; }
 
 }
